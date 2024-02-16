@@ -22,9 +22,9 @@ function submitQuiz() {
     if (results < 20) {outcome = `Larry Fink`} else 
     if (results < 24) {outcome = `Donald Trump`} else 
     if (results < 28) {outcome = `Bill Ackman`} else 
-    if (results < 30) {outcome = `Elon Musk`}
+    if (results < 30) {outcome = `Elon Musk`} else {outcome = `not found`}
     
     
-    results.innerHTML = `<h2>OMG, you're basically: ${outcome} (${results)</h2>`;
+    results.innerHTML = `<h2>OMG, you're basically: ${outcome} (${results})</h2>`;
 }
 
