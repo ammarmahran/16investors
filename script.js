@@ -25,6 +25,6 @@ function submitQuiz() {
     if (results < 30) {outcome = `Elon Musk`}
     
     
-    results.innerHTML = `<h2>OMG, you're basically: ${outcome}</h2>`;
+    results.innerHTML = `<h2>OMG, you're basically: ${outcome} (${results)</h2>`;
 }
 
