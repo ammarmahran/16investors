@@ -1,7 +1,7 @@
 function submitQuiz() {
     const form = document.getElementById('quizForm');
     let score = 0;
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 4; i++) {
         const question = form['q' + i];
         const answer = question.value;
         if (answer) {
@@ -15,6 +15,6 @@ function submitQuiz() {
 
     // Display results
     const results = document.getElementById('results');
-    results.innerHTML = `<h2>Your Score: ${score}</h2><p>Further interpretation of the score can be added here.</p>`;
+    results.innerHTML = `<h2>Your Score: ${score}</h2><p>Looks like you're a twat!</p>`;
 }
 
