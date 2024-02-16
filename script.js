@@ -15,6 +15,17 @@ function submitQuiz() {
 
     // Display results
     const results = document.getElementById('results');
+    let score = ``;
+
+    if (results < 8) {score = `Jeff Bezos`} else 
+    if (results < 12) {score = `Warren Buffet`} else 
+    if (results < 16) {score = `SBF`} else 
+    if (results < 20) {score = `Larry Fink`} else 
+    if (results < 24) {score = `Donald Trump`} else 
+    if (results < 28) {score = `Bill Ackman`} else 
+    if (results < 30) {score = `Elon Musk`}
+    
+    
     results.innerHTML = `<h2>Your Score: ${score}</h2><p>Looks like you're a twat!</p>`;
 }
 
