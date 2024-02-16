@@ -16,15 +16,15 @@ function submitQuiz() {
     // Display results
     const results = document.getElementById('results');
 
-    if (results < 8) {outcome = `Jeff Bezos`} else 
-    if (results < 12) {outcome = `Warren Buffet`} else 
-    if (results < 16) {outcome = `SBF`} else 
-    if (results < 20) {outcome = `Larry Fink`} else 
-    if (results < 24) {outcome = `Donald Trump`} else 
-    if (results < 28) {outcome = `Bill Ackman`} else 
-    if (results < 30) {outcome = `Elon Musk`} else {outcome = `not found`}
+    if (score < 8) {outcome = `Jeff Bezos`} else 
+    if (score < 12) {outcome = `Warren Buffet`} else 
+    if (score < 16) {outcome = `SBF`} else 
+    if (score < 20) {outcome = `Larry Fink`} else 
+    if (score < 24) {outcome = `Donald Trump`} else 
+    if (score < 28) {outcome = `Bill Ackman`} else 
+    if (score < 30) {outcome = `Elon Musk`} else {outcome = `not found`}
     
     
-    results.innerHTML = `<h2>OMG, you're basically: ${outcome} (${results})</h2>`;
+    results.innerHTML = `<h2>OMG, you're basically: ${outcome} (Score = ${score})</h2>`;
 }
 
