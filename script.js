@@ -15,7 +15,6 @@ function submitQuiz() {
 
     // Display results
     const results = document.getElementById('results');
-    let outcome = ``;
 
     if (results < 8) {outcome = `Jeff Bezos`} else 
     if (results < 12) {outcome = `Warren Buffet`} else 
