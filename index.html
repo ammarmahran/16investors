@@ -3,70 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personality Quiz</title>
+    <title>16 Investors - Find your investment personality!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>16 Investors</h1>
-        <form id="quizForm">
-            <!-- Question 1 -->
-            <div class="question">
-                <p>1. I like money.</p>
-                <div class="options">
-                    <label><input type="radio" name="q1" value="1"> Agree</label>
-                    <label><input type="radio" name="q1" value="2"> </label>
-                    <label><input type="radio" name="q1" value="3"> </label>
-                    <label><input type="radio" name="q1" value="4"> </label>
-                    <label><input type="radio" name="q1" value="5"> </label>
-                    <label><input type="radio" name="q1" value="6"> </label>
-                    <label><input type="radio" name="q1" value="7"> Disagree</label>
-                </div>
-            </div>
-            <!-- Question 2 -->
-            <div class="question">
-                <p>2. I value potential over certainty.</p>
-                <div class="options">
-                    <label><input type="radio" name="q2" value="1"> Agree</label>
-                    <label><input type="radio" name="q2" value="2"> </label>
-                    <label><input type="radio" name="q2" value="3"> </label>
-                    <label><input type="radio" name="q2" value="4"> </label>
-                    <label><input type="radio" name="q2" value="5"> </label>
-                    <label><input type="radio" name="q2" value="6"> </label>
-                    <label><input type="radio" name="q2" value="7"> Disagree</label>
-                </div>
-            </div>
-            <!-- Question 3 -->
-            <div class="question">
-                <p>3. I'd rather have one cookie right now than two cookies tomorrow.</p>
-                <div class="options">
-                    <label><input type="radio" name="q3" value="1"> Agree</label>
-                    <label><input type="radio" name="q3" value="2"> </label>
-                    <label><input type="radio" name="q3" value="3"> </label>
-                    <label><input type="radio" name="q3" value="4"> </label>
-                    <label><input type="radio" name="q3" value="5"> </label>
-                    <label><input type="radio" name="q3" value="6"> </label>
-                    <label><input type="radio" name="q3" value="7"> Disagree</label>
-                </div>
-            </div>
-            <!-- Question 4 -->
-            <div class="question">
-                <p>4. It's not enough that I win, others must lose.</p>
-                <div class="options">
-                    <label><input type="radio" name="q4" value="1"> Agree</label>
-                    <label><input type="radio" name="q4" value="2"> </label>
-                    <label><input type="radio" name="q4" value="3"> </label>
-                    <label><input type="radio" name="q4" value="4"> </label>
-                    <label><input type="radio" name="q4" value="5"> </label>
-                    <label><input type="radio" name="q4" value="6"> </label>
-                    <label><input type="radio" name="q4" value="7"> Disagree</label>
-                </div>
-            </div>
-            <!-- Submit Button -->
-            <button type="button" onclick="submitQuiz()">Submit</button>
-        </form>
-        <div id="results"></div>
-    </div>
-    <script src="script.js"></script>
+
+<div id="questions-container"></div>
+
+<script>
+// Define an array of questions
+const questions = [
+	"I like money.",
+	"I would rather drive an electric vehicle even if it has its downsides.",
+	"I would rather have $100 dollars today than $110 a year from now.",
+	"Corporations’ prime responsibility is towards their shareholders.",
+	"I always get insurance for things like my phone or travels.",
+	"Money acquired easily (e.g. through gambling or speculation) is usually spent unwisely.",
+	"No one should tell me what I can or cannot do with my money.",
+	"Patience is a virtue.",
+	"We need to focus on dealing with the consequences of climate change.",
+	"I can afford to put money to the side.",
+	"I trust the government to spend tax money wisely.",
+	"Money is there to be spent.",
+	"I would rather have $100 for sure than toss a coin for the chance of winning $220.",
+	"We need to invest more to combat climate change.",
+	"I enjoy taking risks.",
+	"I like the security of a stable job.",
+	"I would rather have one cookie right now than two tomorrow.",
+	"Inheritances should be taxed higher.",
+	"It takes free markets for people to be free.",
+	"It’s not right for some to have a lot more than others.",
+	"I tend to spend money as soon as I have it.",
+	"Capital-owners have a responsibility towards society.",
+	"Corporations should be forced to become greener.",
+	"I value potential over certainty.",
+	"I worry what the world will look like in 20 years."
+];
+
+// Create a container to hold the questions
+const questionsContainer = document.getElementById("questions-container");
+
+// Loop through the questions array and create HTML elements for each question
+questions.forEach((question, index) => {
+    // Create a div for each question
+    const questionDiv = document.createElement("div");
+
+    // Create a label for the question
+    const questionLabel = document.createElement("label");
+    questionLabel.textContent = question;
+    questionDiv.appendChild(questionLabel);
+    questionDiv.appendChild(document.createElement("br"));
+
+    // Create radio buttons for the question
+    for (let i = 1; i <= 7; i++) {
+        const radioBtn = document.createElement("input");
+        radioBtn.type = "radio";
+        radioBtn.name = "question" + (index + 1);
+        radioBtn.value = "option" + i;
+        questionDiv.appendChild(radioBtn);
+        const radioLabel = document.createElement("label");
+        radioLabel.textContent = "Option " + i;
+        questionDiv.appendChild(radioLabel);
+        questionDiv.appendChild(document.createElement("br"));
+    }
+
+    // Append the question div to the container
+    questionsContainer.appendChild(questionDiv);
+});
+</script>
+
 </body>
 </html>
